@@ -22,13 +22,13 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
@@ -36,8 +36,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "dev": "tsc -p tsconfig.build.json --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "play": "tsx playground/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@types/node": "^22.10.0",
     "comark": "^0.4.0",
+    "tsdown": "^0.22.3",
     "tsx": "^4.22.4",
     "typescript": "^5.7.0",
     "vitest": "^4.1.4"

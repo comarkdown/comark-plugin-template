@@ -1,4 +1,4 @@
-import { defineComarkPlugin } from 'comark/parse'
+import { defineComarkPlugin } from 'comark'
 import type { ComarkPluginFactory } from 'comark'
 // Handy AST helpers — uncomment when you need them:
 // import { visit, textContent } from 'comark/utils'

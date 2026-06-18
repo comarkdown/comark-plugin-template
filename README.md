@@ -4,9 +4,10 @@
 > This repo is a skeleton — work through the [checklist](#-replace-these) below,
 > then replace the starter logic in `src/index.ts` with your own.
 
-A starter for building [Comark](https://comark.dev) plugins in TypeScript: ESM
-output, typed `meta` contributions, a [Vitest](https://vitest.dev) suite, a
-`tsx` playground, and GitHub Actions CI.
+A starter for building [Comark](https://comark.dev) plugins in TypeScript:
+[tsdown](https://tsdown.dev) builds (ESM + declarations), typed `meta`
+contributions, a [Vitest](https://vitest.dev) suite, a `tsx` playground, and
+GitHub Actions CI.
 
 ## 📋 Replace these
 
@@ -28,8 +29,11 @@ Use this template on GitHub (or clone it), then:
 pnpm install
 pnpm play   # run the playground against your plugin
 pnpm test   # run the test suite
-pnpm build  # emit dist/ (JS + type declarations)
+pnpm build  # bundle dist/ (ESM + type declarations) with tsdown
 ```
+
+> Requires Node.js ≥ 22.18 for development (tsdown's requirement); the published
+> package itself runs on Node ≥ 20.
 
 ## Usage
 
@@ -116,7 +120,8 @@ See the [Plugin API](https://comark.dev/plugins/custom/plugin-api) and
 | `pnpm test`       | Run the test suite once                      |
 | `pnpm test:watch` | Run tests in watch mode                      |
 | `pnpm typecheck`  | Type-check the whole project (no emit)       |
-| `pnpm build`      | Emit `dist/` (JS + declarations)             |
+| `pnpm build`      | Bundle `dist/` (ESM + declarations) via tsdown |
+| `pnpm dev`        | Rebuild on change (`tsdown --watch`)         |
 
 ## Publishing
 
