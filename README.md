@@ -1,6 +1,5 @@
 # your-comark-plugin
 
-> 📋 **Created from the [Comark](https://comark.dev) plugin template.**
 > This repo is a skeleton — work through the [checklist](#-replace-these) below,
 > then replace the starter logic in `src/index.ts` with your own.
 
@@ -52,9 +51,9 @@ A plugin is a factory created with `defineComarkPlugin`. The factory receives
 the user's options and returns the plugin object:
 
 ```ts
-import { defineComarkPlugin } from 'comark/parse'
+import { defineComarkPlugin } from 'comark'
 
-export default defineComarkPlugin<Options, Meta, Frontmatter>((options = {}) => ({
+export default defineComarkPlugin<Options, Meta>((options = {}) => ({
   name: 'your-comark-plugin',
 
   // Optional markdown-it extensions added to the parser.
@@ -80,9 +79,8 @@ The three type parameters are all optional:
 | ------------- | ------------------------------------------- |
 | `Options`     | The shape of the factory's argument         |
 | `Meta`        | Keys this plugin adds to `tree.meta`        |
-| `Frontmatter` | Keys this plugin adds to `tree.frontmatter` |
 
-Declaring `Meta` / `Frontmatter` is what makes the keys you write come back
+Declaring `Meta` is what makes the keys you write come back
 fully typed for consumers — see `PluginMeta` in `src/index.ts`.
 
 ### The AST
