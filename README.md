@@ -1,5 +1,10 @@
 # your-comark-plugin
 
+[![npm version](https://img.shields.io/npm/v/your-comark-plugin?color=black)](https://npmx.dev/your-comark-plugin)
+[![npm downloads](https://img.shields.io/npm/dm/your-comark-plugin?color=black)](https://npm.chart.dev/your-comark-plugin)
+[![CI](https://img.shields.io/github/actions/workflow/status/your-name/your-comark-plugin/ci.yml?branch=main&color=black)](https://github.com/your-name/your-comark-plugin/actions/workflows/ci.yml)
+[![license](https://img.shields.io/github/license/your-name/your-comark-plugin?color=black)](https://github.com/your-name/your-comark-plugin/blob/main/LICENSE)
+
 > This repo is a skeleton — work through the [checklist](#-replace-these) below,
 > then replace the starter logic in `src/index.ts` with your own.
 
@@ -10,7 +15,8 @@ GitHub Actions CI.
 
 ## 📋 Replace these
 
-Search the repo for `TODO` and `your-comark-plugin` to find every placeholder.
+Search the repo for `TODO`, `your-comark-plugin`, and `your-name` to find every
+placeholder.
 
 - [ ] **`package.json`** — `name`, `description`, `keywords`, `author`,
       `homepage`, `bugs`, `repository`.
@@ -18,7 +24,8 @@ Search the repo for `TODO` and `your-comark-plugin` to find every placeholder.
 - [ ] **`src/index.ts`** — the plugin `name`, the `PluginOptions` / `PluginMeta`
       types, and the `post` hook logic.
 - [ ] **`test/plugin.test.ts`** — real tests for your plugin.
-- [ ] **This `README.md`** — the title, description, and usage example.
+- [ ] **This `README.md`** — the title, description, usage example, and badge
+      URLs (`your-comark-plugin` / `your-name`).
 
 ## Getting started
 
@@ -39,10 +46,10 @@ pnpm build  # bundle dist/ (ESM + type declarations) with tsdown
 Consumers register your plugin when parsing:
 
 ```ts
-import { parse } from 'comark'
+import { parseMarkdown } from 'comark'
 import plugin from 'your-comark-plugin'
 
-const tree = await parse(content, { plugins: [plugin()] })
+const tree = await parseMarkdown(content, { plugins: [plugin()] })
 ```
 
 ## Anatomy of a Comark plugin
