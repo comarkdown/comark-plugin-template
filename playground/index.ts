@@ -1,4 +1,4 @@
-import { parse } from 'comark'
+import { parseMarkdown } from 'comark'
 import plugin from '../src/index.ts'
 
 // A scratchpad for trying your plugin. Edit the content, tweak `src/index.ts`,
@@ -12,7 +12,7 @@ title: Playground
 Some **markdown** to run your plugin against.
 `
 
-const tree = await parse(content, { plugins: [plugin()] })
+const tree = await parseMarkdown(content, { plugins: [plugin()] })
 
 console.log('nodes:', tree.nodes)
 console.log('frontmatter:', tree.frontmatter)

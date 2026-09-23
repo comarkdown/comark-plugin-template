@@ -33,10 +33,10 @@ export interface PluginMeta {
  *
  * @example
  * ```ts
- * import { parse } from 'comark'
+ * import { parseMarkdown } from 'comark'
  * import plugin from 'your-comark-plugin'
  *
- * const tree = await parse(content, { plugins: [plugin()] })
+ * const tree = await parseMarkdown(content, { plugins: [plugin()] })
  * ```
  */
 const plugin: ComarkPluginFactory<PluginOptions, PluginMeta> = defineComarkPlugin<
